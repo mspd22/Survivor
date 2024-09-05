@@ -12,7 +12,7 @@ def final_window(score : int) -> None:
     root.attributes('-fullscreen', True)
 
         # Load the background image
-    background_image = Image.open("./assets/sprites/result.png")
+    background_image = Image.open("./assets/sprites/GO_screen.png")
 
         # Calculate aspect ratio
     aspect_ratio = background_image.width / background_image.height
