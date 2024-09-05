@@ -87,18 +87,34 @@ void renderPlayer() {
 void render(GLFWwindow* window) {
     
     static double startTime = glfwGetTime();
+    // Get the window size
+    int width, height;
+    glfwGetFramebufferSize(window, &width, &height);
+    
+    // Set up the viewport
+    glViewport(0, 0, width, height);
+    
+    // Switch to projection matrix
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    // Set an orthographic projection based on the window size
+    // This makes the window dimensions match the game world coordinates
+    glOrtho(-WINDOW_WIDTH / 2, WINDOW_WIDTH / 2, -WINDOW_HEIGHT / 2, WINDOW_HEIGHT / 2, -1.0, 1.0);
+    
+    // Switch back to modelview matrix
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
     // Clear the screen with green color
     glClearColor(0.11f, 0.27f, 0.06f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-
     // Render player
     renderPlayer();
-
     // Render coins
     renderCoins(window, playerX, playerY, playerSize, score);
     
     // Render enemies
-    
     if(glfwGetTime() - startTime > 3.0f){
         renderEnemies(window, playerX, playerY, speed, playerSize);
     }
