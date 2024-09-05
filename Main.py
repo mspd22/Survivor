@@ -11,7 +11,7 @@ root.title("Survivor's Resolve")
 root.state('zoomed')
 
 # Load the background image
-background_image = Image.open("./assets/sprites/Untitled.png")
+background_image = Image.open("./assets/sprites/Bg.png")
 
 # Calculate aspect ratio
 aspect_ratio = background_image.width / background_image.height
@@ -30,7 +30,7 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Create a custom button
 ctk.CTkButton(root, text='START GAME', text_color='#ffffff', width=150, height=10, font=('Comic Sans MS', 50, 'bold'),
-              fg_color='#83d079', hover_color='#24bdc8', border_spacing=0,command=lambda: start(root)).place(x=300, y=500)
+              fg_color='#550000', hover_color='#000000', border_spacing=0,command=lambda: start(root)).place(x=560, y=500)
 
 # Run the main event loop
 root.mainloop()
