@@ -105,7 +105,7 @@ void spawnEnemy(GLFWwindow* window, float playerX, float playerY) {
         // 80% chance to spawn a chasing enemy
         type = PREDICTIVE_CHASING_ENEMY;
     } else {
-        // 20% chance to spawn a predictive chasing enemy
+        // 20% chance to spawn a random movement enemy
         type = RANDOM_MOVEMENT_ENEMY;
         int enemyIndex = static_cast<int>(enemies.size()) - 1;
         int direction = rand() % 4;  // Random direction: 0 = up, 1 = down, 2 = left, 3 = right
