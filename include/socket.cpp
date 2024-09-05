@@ -9,6 +9,7 @@
 #include <iostream>
 
 int sock = -1; // Define the global socket variable
+const int port = 50550;
 
 // Function to initialize the socket connection
 void setupSocket() {
@@ -22,7 +23,7 @@ void setupSocket() {
     // Define the server address and port
     sockaddr_in server;
     server.sin_family = AF_INET;
-    server.sin_port = htons(50550); // Port number must match the one in the Python script
+    server.sin_port = htons(port); // Port number must match the one in the Python script
     server.sin_addr.s_addr = inet_addr("127.0.0.1"); // Localhost IP address
  
     // Connect to the Python script
